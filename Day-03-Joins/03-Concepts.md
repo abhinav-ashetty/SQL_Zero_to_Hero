@@ -870,6 +870,22 @@ WHERE DepartmentID <> NULL
 WHERE DepartmentID IS NOT NULL
 
 This is a very common interview trap.
+
+---
+And here's something interesting:
+
+Because you're using LEFT JOIN, Marketing remains in the result even though it has no employees.
+
+Its total salary will be:
+
+NULL
+
+If the interviewer wants 0 instead of NULL, later you'll learn how to use ISNULL():
+
+ISNULL(SUM(e.Salary), 0)
+
+We'll cover NULL-handling properly later.
+
 ---
 🧠 Your Most Important Day 3 Lessons
 
@@ -926,7 +942,7 @@ WHERE EmployeeID IS NULL
 The table you start from matters.
 
 This is one of the biggest things beginners struggle with in JOINs.
-
+---
 🎯 One Final Mini Challenge
 
 Before we officially finish Day 3, solve these without me giving you the answer:
