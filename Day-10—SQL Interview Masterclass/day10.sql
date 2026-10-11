@@ -1,11 +1,11 @@
 --Practice Problems:
+
 --1.
 WITH SecondHighestSalary AS(
 SELECT EmployeeName, Salary , DENSE_RANK() OVER(ORDER BY Salary DESC) AS SalaryRank FROM Employees_Day6
 )
 SELECT EmployeeName, Salary FROM SecondHighestSalary
 WHERE SalaryRank = 2;
-
 
 --2.
 WITH SecondHighestSalary AS(
@@ -175,4 +175,3 @@ DENSE_RANK() OVER(
 ORDER BY Salary DESC determines who gets rank 1, rank 2, etc.
 
 */
-
